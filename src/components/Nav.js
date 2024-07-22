@@ -1,22 +1,23 @@
 import logo from "../images/logo.svg";
-
-const styles = {};
+import MenuIcon from "@mui/icons-material/Menu";
+import { useState } from "react";
 
 const Nav = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
   return (
-    <nav style={styles.navigation}>
-      {/* logo */}
+    <nav>
       <a href="/">
         <img src={logo} alt="Little Lemon Logo" />
       </a>
-      {/* mobile navigation icon */}
-      <div className="hamburger">
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
-      {/* navigation items */}
-      <ul style={styles.navigationItems}>
+
+      <a className="header--hamburger" onClick={toggleMenu}>
+        <MenuIcon />
+      </a>
+
+      <ul className={`header--nav ${menuOpen ? "visible" : ""}`}>
         <li>
           <a href="/">Home</a>
         </li>
