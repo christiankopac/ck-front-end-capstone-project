@@ -1,38 +1,213 @@
-.App {
-  text-align: center;
+/*
+I will use a global CSS file because
+- It is a small to medium-sized app with relatively simple styling needs.
+- I want to maintain a consistent visual design across the app.
+- I am working on a project with a small team or a solo developer.
+*/
+:root {
+    --primary-bg: #f0f0f0;
+    --secondary-bg: #f5e6a6;
+    --primary-text: #4a5934;
+    --secondary-text: #8b9a6e;
+    --accent: #f4c300;
+    --font-size-small: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-medium: 1.125rem;
+    --font-size-large: 1.25rem;
+    --font-size-xlarge: 1.5rem;
+    --font-size-xxlarge: 2rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-bg: #4a5934;
+        --secondary-bg: #8b9a6e;
+        --primary-text: #f0f0f0;
+        --secondary-text: #f5e6a6;
+        --accent: #f4c300;
+    }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media (min-width: 768px) {
+    :root {
+        --font-size-small: 1rem;
+        --font-size-base: 1.125rem;
+        --font-size-medium: 1.25rem;
+        --font-size-large: 1.5rem;
+        --font-size-xlarge: 1.75rem;
+        --font-size-xxlarge: 2.25rem;
+    }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+body {
+    font-size: var(--font-size-base);
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+    font-size: var(--font-size-xxlarge);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+    font-size: var(--font-size-xlarge);
+}
+
+h3 {
+    font-size: var(--font-size-large);
+}
+
+h4 {
+    font-size: var(--font-size-medium);
+}
+
+h5,
+h6 {
+    font-size: var(--font-size-small);
+}
+
+p,
+a,
+ul,
+ol,
+li,
+blockquote {
+    font-size: var(--font-size-base);
+}
+
+button,
+input,
+textarea,
+select {
+    font-size: var(--font-size-base);
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--accent);
+}
+
+p,
+a,
+ul,
+ol,
+li,
+blockquote {
+    color: var(--secondary-text);
+}
+
+a {
+    text-decoration: none;
+    color: var(--accent);
+}
+a:hover {
+    text-decoration: underline;
+}
+
+button,
+input,
+textarea,
+select {
+    background-color: var(--secondary-bg);
+    color: var(--primary-text);
+    border: 1px solid var(--primary-text);
+}
+
+/* header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+/* main */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+}
+
+/* footer */
+footer h2 {
+    padding-bottom: 0;
+}
+
+footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-content: center;
+    padding: 1rem 4rem;
+    gap: 4rem;
+    background-color: var(--secondary-bg);
+}
+
+.footer--logo {
+    align-self: center;
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 4rem 2rem;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+}
+
+.footer--logo img {
+    width: 100%;
+}
+
+.footer--contact {
+}
+
+.footer--nav nav {
+    padding: 0;
+}
+
+.footer--nav ul,
+.footer--contact ul,
+.footer--social ul {
+    padding: 0;
+}
+
+.footer--nav li,
+.footer--contact li,
+.footer--social li {
+    list-style: none;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.link--icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    text-decoration: none;
+}
+.link--icon:hover {
+    text-decoration: underline;
 }
