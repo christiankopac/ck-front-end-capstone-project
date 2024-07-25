@@ -1,0 +1,36 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card--content {
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    height: 100%;
+    border-radius: 0 0 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+.card--header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.card--body {
+}
+
+.card--img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    min-height: 200px;
+}
+.card--img img {
+}
+.card--price {
+    font-weight: bold;
+    color: var(--accent);
+}

@@ -1,0 +1,11 @@
+footer {
+    background-color: var(--footer-bg-color);
+}
+.footer--container {
+    max-width: 65rem;
+    margin: 0 auto;
+    display: grid;
+    justify-content: center;
+    gap: var(--footer-gap);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}

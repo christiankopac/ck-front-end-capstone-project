@@ -1,0 +1,32 @@
+.about {
+}
+.about--container {
+    max-width: 65rem;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 3rem;
+}
+.about--content {
+    max-width: 520px;
+    line-height: 1.5;
+    padding: 1rem 2rem 0 0;
+}
+.about--content p {
+    color: var(--secondary-bg);
+}
+.about--img {
+    position: relative;
+}
+.about--img img {
+    border-radius: 20px;
+    max-width: 200px;
+}
+.about--img img:first-child {
+}
+.about--img img:last-child {
+    position: relative;
+    top: 70px;
+    right: 50px;
+}
