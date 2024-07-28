@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import About from "./About";
+import { About } from "../index";
 
 describe("About Component", () => {
   it("should render without crashing", () => {

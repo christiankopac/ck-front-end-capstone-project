@@ -7,8 +7,9 @@ const UnderConstruction = () => {
         alignItems: "center",
         display: "flex",
       }}
+      aria-label="Under Construction Container"
     >
-      <h1>Under Construction</h1>
+      <h1 aria-label="Under Construction Heading">Under Construction</h1>
     </div>
   );
 };

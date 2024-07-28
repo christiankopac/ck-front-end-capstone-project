@@ -14,7 +14,13 @@ const Button = ({ title, onClick, type }) => {
   };
 
   return (
-    <button type={type} role="button" className="button" onClick={handleClick}>
+    <button
+      type={type}
+      role="button"
+      className="button"
+      onClick={handleClick}
+      aria-label={title}
+    >
       {title}
     </button>
   );

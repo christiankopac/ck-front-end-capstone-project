@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import Testimonials from "./Testimonials"; // adjust the path as necessary
-import { TestimonialCard } from "../../index";
+import { TestimonialCard } from "../../index"; // adjust the path as necessary
 
 // Mock the TestimonialCard component to simplify testing
 jest.mock("../../index", () => ({

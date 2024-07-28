@@ -17,19 +17,29 @@ const Footer = () => {
           <nav>
             <ul>
               <li>
-                <a href="/">Home</a>
+                <a href="/" aria-label="Home">
+                  Home
+                </a>
               </li>
               <li>
-                <a href="/">About</a>
+                <a href="/" aria-label="About">
+                  About
+                </a>
               </li>
               <li>
-                <a href="/">Services</a>
+                <a href="/" aria-label="Services">
+                  Services
+                </a>
               </li>
               <li>
-                <a href="/">Reservations</a>
+                <a href="/" aria-label="Reservations">
+                  Reservations
+                </a>
               </li>
               <li>
-                <a href="/">Order Online</a>
+                <a href="/" aria-label="Order Online">
+                  Order Online
+                </a>
               </li>
             </ul>
           </nav>
@@ -42,15 +52,22 @@ const Footer = () => {
             <p>Springfield, IL 62701</p>
             <p>United States</p>
           </address>
-          {/* add phone icon */}
           <p>
-            <a href="tel:+1234567890" className="link--icon">
+            <a
+              href="tel:+1234567890"
+              className="link--icon"
+              aria-label="Phone number +1 (234) 567-890"
+            >
               <LocalPhoneIcon />
               +1 (234) 567-890
             </a>
           </p>
           <p>
-            <a href="mailto:example@littlelemon.com" className="link--icon">
+            <a
+              href="mailto:example@littlelemon.com"
+              className="link--icon"
+              aria-label="Email example@littlelemon.com"
+            >
               <EmailIcon />
               Email Us
             </a>
@@ -65,6 +82,7 @@ const Footer = () => {
                 href="https://www.facebook.com/littlelemon"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Facebook"
               >
                 <FacebookIcon />
                 <span>Facebook</span>
@@ -76,6 +94,7 @@ const Footer = () => {
                 href="https://www.instagram.com/littlelemon"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Instagram"
               >
                 <InstagramIcon />
                 <span>Instagram</span>
@@ -87,6 +106,7 @@ const Footer = () => {
                 href="https://www.twitter.com/littlelemon"
                 target="_blank"
                 rel="noreferrer"
+                aria-label="Twitter"
               >
                 <XIcon />
                 <span>Twitter</span>

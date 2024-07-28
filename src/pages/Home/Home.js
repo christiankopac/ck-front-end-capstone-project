@@ -17,10 +17,10 @@ const Home = () => (
         }}
       >
     */}
-    <Hero />
-    <Highlights />
-    <Testimonials />
-    <About />
+    <Hero aria-label="Hero Section" />
+    <Highlights aria-label="Highlights Section" />
+    <Testimonials aria-label="Testimonials Section" />
+    <About aria-label="About Section" />
     {/*
       </main>
       */}

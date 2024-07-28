@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Nav from "./Nav";
+import { Nav } from "../index";
 
 describe("Nav component", () => {
   it("should render the logo", () => {
@@ -20,7 +20,7 @@ describe("Nav component", () => {
         <Nav />
       </Router>,
     );
-    const menuIcon = screen.getByRole("button", { name: "" });
+    const menuIcon = screen.getByRole("button", { name: "menu" });
     expect(menuIcon).toBeInTheDocument();
   });
 
@@ -30,7 +30,7 @@ describe("Nav component", () => {
         <Nav />
       </Router>,
     );
-    const menuIcon = screen.getByRole("button", { name: "" });
+    const menuIcon = screen.getByRole("button", { name: "menu" });
     const nav = screen.getByRole("ul-navigation");
 
     // Check initial state

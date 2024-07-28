@@ -1,7 +1,6 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
-import BookingForm from "./BookingForm";
-import Button from "../Button/Button";
+import { BookingForm, Button } from "../index";
 
 describe("BookingForm component", () => {
   const defaultProps = {

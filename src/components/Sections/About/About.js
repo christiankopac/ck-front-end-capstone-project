@@ -19,8 +19,16 @@ const About = () => (
         </p>
       </div>
       <div className="about--img">
-        <img src="about-1.jpg" alt="Little Lemon Kitchen" />
-        <img src="about-2.jpg" alt="Little Lemon Team" />
+        <img
+          src="about-1.jpg"
+          alt="Little Lemon Kitchen"
+          aria-label="Little Lemon Kitchen"
+        />
+        <img
+          src="about-2.jpg"
+          alt="Little Lemon Team"
+          aria-label="Little Lemon Team"
+        />
       </div>
     </div>
   </section>

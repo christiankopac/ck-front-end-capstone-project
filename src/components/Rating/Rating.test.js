@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import StarRateIcon from "@mui/icons-material/StarRate";
-import Rating from "./Rating";
+import { Rating } from "../index";
 
 describe("Rating component", () => {
   it("should render the correct number of stars", () => {

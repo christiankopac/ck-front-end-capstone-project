@@ -54,10 +54,9 @@ const BookingForm = ({
           <div className="booking--form">
             <form onSubmit={handleSubmit} role="form">
               {/* date */}
-              <label arial-label="Date" htmlFor="res-date">
-                Date
-              </label>
+              <label htmlFor="res-date">Date</label>
               <input
+                aria-label="Date"
                 type="date"
                 id="res-date"
                 name="date"
@@ -101,7 +100,9 @@ const BookingForm = ({
                 onChange={handleInputChange}
               />
               {/* Ocassion */}
-              <label htmlFor="occasion">Ocassion</label>
+              <label aria-label="Ocassion" htmlFor="occasion">
+                Occasion
+              </label>
               <select
                 id="occasion"
                 name="occasion"
@@ -115,7 +116,11 @@ const BookingForm = ({
                 <option value="other">Other</option>
               </select>
               {/* submit */}
-              <button type="submit" onSubmit={handleSubmit}>
+              <button
+                type="submit"
+                onSubmit={handleSubmit}
+                aria-label="Book Now"
+              >
                 Book Now
               </button>
             </form>

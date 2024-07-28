@@ -2,7 +2,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Highlights from "./Highlights";
+import { Highlights } from "../index";
 
 describe("Highlights Component", () => {
   beforeEach(() => {

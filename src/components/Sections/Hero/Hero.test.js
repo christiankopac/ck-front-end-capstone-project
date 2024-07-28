@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Hero from "./Hero";
+import { Hero } from "../index";
 
 // Test if the component renders correctly
 test("renders Hero component", () => {

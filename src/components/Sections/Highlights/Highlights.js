@@ -8,7 +8,7 @@ const Highlights = () => (
       <div className="highlights--header">
         <h1>Highlights</h1>
         <Link to="/menu">
-          <button>Online Menu </button>
+          <button aria-label="View Online Menu">Online Menu </button>
         </Link>
       </div>
       <div className="highlights--content">

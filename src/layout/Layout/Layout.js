@@ -13,6 +13,7 @@ const Layout = ({ children }) => {
           gap: "1rem",
         }}
         data-testid="main-content"
+        aria-label="Main Content"
       >
         {children}
       </main>

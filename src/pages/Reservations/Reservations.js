@@ -56,9 +56,12 @@ const Reservations = () => {
   );
 
   return (
-    <section className="reservations">
-      <div className="reservations--container">
-        <h1>Reservations</h1>
+    <section className="reservations" aria-label="Reservations Section">
+      <div
+        className="reservations--container"
+        aria-label="Reservations Container"
+      >
+        <h1 aria-label="Reservations Title">Reservations</h1>
         {selectedDate}
         <BookingForm
           selectedDate={selectedDate}

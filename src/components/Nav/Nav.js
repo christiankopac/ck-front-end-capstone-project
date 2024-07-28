@@ -10,12 +10,17 @@ const Nav = () => {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav>
+    <nav aria-label="Main Navigation">
       <a href="/">
         <img src={logo} alt="Little Lemon Logo" />
       </a>
 
-      <a className="header--hamburger" onClick={toggleMenu} role="button">
+      <a
+        className="header--hamburger"
+        onClick={toggleMenu}
+        role="button"
+        aria-label="menu"
+      >
         <MenuIcon />
       </a>
 
@@ -24,22 +29,34 @@ const Nav = () => {
         className={`header--nav ${menuOpen ? "visible" : ""}`}
       >
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/" aria-label="Home">
+            Home
+          </Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/about" aria-label="About">
+            About
+          </Link>
         </li>
         <li>
-          <Link to="/menu">Menu</Link>
+          <Link to="/menu" aria-label="Menu">
+            Menu
+          </Link>
         </li>
         <li>
-          <Link to="/reservations">Reservations</Link>
+          <Link to="/reservations" aria-label="Reservations">
+            Reservations
+          </Link>
         </li>
         <li>
-          <Link to="/orders">Order Online</Link>
+          <Link to="/orders" aria-label="Order Online">
+            Order Online
+          </Link>
         </li>
         <li>
-          <Link to="/login">Login</Link>
+          <Link to="/login" aria-label="Login">
+            Login
+          </Link>
         </li>
       </ul>
     </nav>

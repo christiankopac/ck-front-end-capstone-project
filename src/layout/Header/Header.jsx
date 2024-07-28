@@ -15,9 +15,10 @@ const Header = () => {
           alignItems: "center",
         },
       }}
+      aria-label="Main Header"
     >
       <h1 style={{ display: "none" }}>Little Lemon</h1>
-      <Nav />
+      <Nav aria-label="Navigation Menu" />
     </header>
   );
 };

@@ -11,12 +11,18 @@ const Hero = () => (
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
           Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <Link to="/booking">
-          <button type="button">Reserve a table</button>
+        <Link to="/booking" aria-label="Reserve a table">
+          <button type="button" aria-label="Reserve a table button">
+            Reserve a table
+          </button>
         </Link>
       </div>
       <div className="hero--img">
-        <img src="https://via.placeholder.com/400x400" alt="Hero" />
+        <img
+          src="https://via.placeholder.com/400x400"
+          alt="Hero"
+          aria-label="Hero image"
+        />
       </div>
     </div>
   </section>

@@ -25,9 +25,9 @@ const Testimonials = () => {
     },
   ];
   return (
-    <section className="testimonials">
+    <section className="testimonials" aria-labelledby="testimonials-heading">
       <div className="testimonials--container">
-        <h1>Testimonials</h1>
+        <h1 id="testimonials-heading">Testimonials</h1>
         <div
           style={{
             display: "grid",
@@ -39,6 +39,7 @@ const Testimonials = () => {
             <TestimonialCard
               key={index}
               testimonial={testimonial}
+              aria-label={`Testimonial from ${testimonial.name}`}
               data-testid="testimonial-card"
             />
           ))}
