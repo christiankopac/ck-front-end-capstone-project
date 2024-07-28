@@ -2,7 +2,7 @@ import StarRateIcon from "@mui/icons-material/StarRate";
 
 const Rating = ({ rating }) => {
   return (
-    <div className="rating">
+    <div className="rating" data-testid="rating-component">
       {[...Array(rating)].map((star, index) => {
         return (
           <StarRateIcon

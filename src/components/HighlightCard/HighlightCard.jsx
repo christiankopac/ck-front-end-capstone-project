@@ -1,8 +1,7 @@
-// Component Name: Card
 import "./HighlightCard.css";
 import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 
-const Card = ({ imgSrc, title, price, description, buttonText }) => {
+const HighlightCard = ({ imgSrc, title, price, description, buttonText }) => {
   return (
     <div className="card">
       <img className="card--img" src={imgSrc} alt={`${title} image`} />
@@ -30,4 +29,5 @@ const Card = ({ imgSrc, title, price, description, buttonText }) => {
     </div>
   );
 };
-export default Card;
+
+export default HighlightCard;

@@ -1,4 +1,5 @@
 import { HighlightCard } from "../../index";
+import { Link } from "react-router-dom";
 import "./Highlights.css";
 
 const Highlights = () => (
@@ -6,7 +7,9 @@ const Highlights = () => (
     <div className="highlights--container">
       <div className="highlights--header">
         <h1>Highlights</h1>
-        <button>Online Menu</button>
+        <Link to="/menu">
+          <button>Online Menu </button>
+        </Link>
       </div>
       <div className="highlights--content">
         <HighlightCard

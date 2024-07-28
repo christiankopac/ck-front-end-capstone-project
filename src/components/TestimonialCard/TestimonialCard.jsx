@@ -3,7 +3,7 @@ import "./TestimonialCard.css";
 
 const TestimonialCard = ({ testimonial }) => {
   return (
-    <div className="testimonial-card">
+    <div className="testimonial-card" data-testid="testimonial-card">
       <Rating rating={testimonial.rating} />
       <div className="testimonial-profile">
         <img src={testimonial.image} alt={testimonial.name} />

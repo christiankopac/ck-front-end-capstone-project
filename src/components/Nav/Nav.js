@@ -2,6 +2,7 @@ import logo from "../../images/logo.svg";
 import MenuIcon from "@mui/icons-material/Menu";
 import { useState } from "react";
 import "./Nav.css";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,28 +15,31 @@ const Nav = () => {
         <img src={logo} alt="Little Lemon Logo" />
       </a>
 
-      <a className="header--hamburger" onClick={toggleMenu}>
+      <a className="header--hamburger" onClick={toggleMenu} role="button">
         <MenuIcon />
       </a>
 
-      <ul className={`header--nav ${menuOpen ? "visible" : ""}`}>
+      <ul
+        role="ul-navigation"
+        className={`header--nav ${menuOpen ? "visible" : ""}`}
+      >
         <li>
-          <a href="/">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="/">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="/">Menu</a>
+          <Link to="/menu">Menu</Link>
         </li>
         <li>
-          <a href="/">Reservations</a>
+          <Link to="/reservations">Reservations</Link>
         </li>
         <li>
-          <a href="/">Order Online</a>
+          <Link to="/orders">Order Online</Link>
         </li>
         <li>
-          <a href="/">Login</a>
+          <Link to="/login">Login</Link>
         </li>
       </ul>
     </nav>

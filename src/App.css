@@ -5,8 +5,17 @@ I will use a global CSS file because
 - I am working on a project with a small team or a solo developer.
 */
 
-/* Import Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;700&display=swap");
+@font-face {
+    font-family: "Markazi";
+    font-weight: 400;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap");
+@font-face {
+    font-family: "Karla";
+    font-weight: 400;
+}
 
 /* CSS Variables */
 :root {
@@ -24,15 +33,15 @@ I will use a global CSS file because
     --font-size-medium: 1.125rem;
     --font-size-large: 1.25rem;
     --font-size-xlarge: 1.5rem;
-    --font-size-xxlarge: 2rem;
+    --font-size-xxlarge: 5rem;
     --font-size-small-large-screen: 1rem;
     --font-size-base-large-screen: 1.125rem;
     --font-size-medium-large-screen: 1.25rem;
     --font-size-large-large-screen: 1.5rem;
     --font-size-xlarge-large-screen: 1.75rem;
-    --font-size-xxlarge-large-screen: 2.25rem;
+    --font-size-xxlarge-large-screen: 4rem;
     --default-padding: 2rem;
-    --header-height: 97px;
+    --header-height: 58px;
     --header-padding: 0rem 1rem;
     --footer-padding: 4rem 16rem;
     --footer-padding-mobile: 2rem 4rem;
@@ -42,8 +51,8 @@ I will use a global CSS file because
     --footer-bg-color: var(--secondary-bg);
     --footer-grid-template: repeat(auto-fill, minmax(150px, 1fr));
     --link-default-decoration: none;
-    --font-family-heading: "Roboto", sans-serif;
-    --font-family-paragraph: "Open Sans", sans-serif;
+    --font-family-heading: "Markazi Text", sans-serif;
+    --font-family-paragraph: "Karla", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -71,7 +80,9 @@ I will use a global CSS file because
     opacity: 1;
     display: flex;
 }
-
+html {
+    scrollbar-gutter: stable;
+}
 @media (max-width: 960px) {
     .header--hamburger {
         display: flex;
@@ -83,10 +94,10 @@ I will use a global CSS file because
     .header--nav {
         flex-direction: column;
         position: absolute;
-        top: calc(var(--header-height) + 32px);
+        top: calc(var(--header-height));
         right: 0;
         width: 100%;
-        padding: 0 0 2rem 0;
+        padding: 1rem;
         background-color: var(--secondary-bg);
         align-items: center;
         opacity: 0;
@@ -139,28 +150,24 @@ body {
 /* Typography */
 h1 {
     font-size: var(--font-size-xxlarge);
-    font-family: var(--font-family-heading);
+    line-height: 2rem;
 }
 
 h2 {
     font-size: var(--font-size-xlarge);
-    font-family: var(--font-family-heading);
 }
 
 h3 {
     font-size: var(--font-size-large);
-    font-family: var(--font-family-heading);
 }
 
 h4 {
     font-size: var(--font-size-medium);
-    font-family: var(--font-family-heading);
 }
 
 h5,
 h6 {
     font-size: var(--font-size-small);
-    font-family: var(--font-family-heading);
 }
 
 p,
@@ -188,6 +195,8 @@ h4,
 h5,
 h6 {
     color: var(--accent);
+    font-family: var(--font-family-heading);
+    margin: 2rem 0;
 }
 
 p,
@@ -247,14 +256,11 @@ select {
     border: 1px solid var(--primary-text);
 }
 
-/* Header */
 header {
     margin: 0 auto;
-    height: var(--header-height);
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--header-padding);
 }
 
 header a {
@@ -289,16 +295,6 @@ main {
 
 /* Footer */
 
-footer h2 {
-    padding-bottom: 0;
-}
-
-.footer--logo {
-    max-width: 150px;
-    align-self: center;
-    margin: 0 auto;
-}
-
 .header--logo img,
 .footer--logo img {
     width: 100%;
@@ -309,24 +305,6 @@ footer h2 {
     .footer--logo img {
         padding-right: 4rem;
     }
-}
-
-.footer--nav nav {
-    padding: 0;
-}
-
-.footer--nav ul,
-.footer--contact ul,
-.footer--social ul {
-    padding: 0;
-}
-
-.footer--nav li,
-.footer--contact li,
-.footer--social li {
-    list-style: none;
-    margin-top: 1em;
-    margin-bottom: 1em;
 }
 
 .link--icon {
@@ -347,13 +325,4 @@ button {
     color: var(--secondary-text);
     border-color: var(--accent);
     background-color: var(--accent);
-}
-
-.highlights {
-}
-
-.testimonials {
-}
-
-.about {
 }

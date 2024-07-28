@@ -17,10 +17,6 @@
     padding: 1rem 0;
 }
 
-.highlights--header h1 {
-    margin: 0;
-}
-
 .highlights--content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
