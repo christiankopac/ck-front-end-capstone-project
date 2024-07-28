@@ -7,8 +7,8 @@ const HighlightCard = ({ imgSrc, title, price, description, buttonText }) => {
       <img
         className="card--img"
         src={imgSrc}
-        alt={`${title} image`}
-        aria-label={`${title} image`}
+        alt={`${title}`}
+        data-testid="highlight-img"
       />
       <div className="card--content" aria-label="card content">
         <div className="card--header" aria-label="card header">

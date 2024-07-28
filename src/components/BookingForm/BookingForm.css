@@ -1,0 +1,49 @@
+.booking {
+    margin: 3rem 0;
+}
+
+.booking--content p {
+    color: var(--primary-text);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--secondary-bg);
+    border-radius: 1rem;
+    padding: var(--default-padding);
+    margin: 3rem 0;
+}
+
+.form-time,
+.form-guests,
+.form-occasion,
+.form-date {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.form-time > *,
+.form-guests > *,
+.form-occasion > *,
+.form-date > * {
+    width: 140px;
+    color: var(--primary-text);
+}
+
+.form-guests input,
+.form-occasion select,
+.form-date input {
+    width: 100%;
+    border: var(--primary-text);
+    padding: 0.5rem;
+}
+
+.error {
+    font-weight: bold;
+    color: red;
+    font-size: 1rem;
+    padding: 0 0 1rem 0;
+    text-align: center;
+}

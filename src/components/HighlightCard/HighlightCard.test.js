@@ -15,7 +15,7 @@ describe("Card component", () => {
       />,
     );
 
-    expect(screen.getByAltText("Test Title image")).toBeInTheDocument();
+    expect(screen.getByTestId("highlight-img")).toBeInTheDocument();
     expect(screen.getByText("Test Title")).toBeInTheDocument();
     expect(screen.getByText("$10")).toBeInTheDocument();
     expect(screen.getByText("Test Description")).toBeInTheDocument();

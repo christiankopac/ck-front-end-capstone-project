@@ -1,6 +1,6 @@
 import React from "react";
-import "./Popup.css";
 import Button from "../Button/Button";
+import "./Popup.css";
 
 const Popup = ({ title, description, onClose }) => {
   return (

@@ -5,3 +5,4 @@ export { default as UnderConstruction } from "./UnderConstruction/UnderConstruct
 export { default as BookingForm } from "./BookingForm/BookingForm";
 export { default as Button } from "./Button/Button";
 export { default as TestimonialCard } from "./TestimonialCard/TestimonialCard";
+export { default as Popup } from "./Popup/Popup";

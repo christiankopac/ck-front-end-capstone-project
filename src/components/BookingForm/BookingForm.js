@@ -1,7 +1,6 @@
 import React from "react";
 import "./BookingForm.css";
 import { useState } from "react";
-import { Button } from "../index";
 
 const BookingForm = ({
   selectedDate,
@@ -22,9 +21,28 @@ const BookingForm = ({
     occasion: occasion || "",
   });
 
+  const [errors, setErrors] = useState({
+    date: false,
+    time: false,
+    guests: false,
+    occasion: false,
+  });
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onFormSubmit(e, formValues);
+
+    const newErrors = {
+      date: !formValues.date,
+      time: !formValues.time,
+      guests: !formValues.guests,
+      occasion: !formValues.occasion,
+    };
+
+    setErrors(newErrors);
+
+    if (!Object.values(newErrors).some((error) => error)) {
+      onFormSubmit(e, formValues);
+    }
   };
 
   const handleDateChange = (e) => {
@@ -38,9 +56,14 @@ const BookingForm = ({
     setFormValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  const isFormValid =
+    formValues.date &&
+    formValues.time &&
+    formValues.guests &&
+    formValues.occasion;
+
   return (
     <>
-      {selectedDate}
       <section className="booking">
         <div className="booking--container">
           <div className="booking--content">
@@ -52,69 +75,93 @@ const BookingForm = ({
             </p>
           </div>
           <div className="booking--form">
-            <form onSubmit={handleSubmit} role="form">
-              {/* date */}
-              <label htmlFor="res-date">Date</label>
-              <input
-                aria-label="Date"
-                type="date"
-                id="res-date"
-                name="date"
-                required
-                value={formValues.date}
-                onChange={handleDateChange}
-              />
-              {/* time */}
-              <label aria-label="Time" htmlFor="res-time">
-                Time
-              </label>
-              <div>
-                {availableTimes.map((availableTime, i) => (
-                  <div
-                    aria-label={`${i}--${availableTime}`}
-                    key={`${i}--${availableTime}`}
-                  >
-                    <input
-                      type="radio"
-                      id={availableTime}
-                      name="time"
-                      value={availableTime}
-                      checked={formValues.time === availableTime}
-                      onChange={handleInputChange}
-                    />
-                    <label htmlFor={availableTime}>{availableTime}</label>
-                  </div>
-                ))}
+            <form onSubmit={handleSubmit}>
+              <div className="form-date">
+                <label htmlFor="res-date">Date</label>
+                <input
+                  aria-label="Date"
+                  type="date"
+                  id="res-date"
+                  name="date"
+                  required
+                  value={formValues.date}
+                  onChange={handleDateChange}
+                />
               </div>
-              {/* Number of guests */}
-              <label htmlFor="guests">Number of Guests</label>
-              <input
-                type="number"
-                id="guests"
-                name="guests"
-                required
-                placeholder="1"
-                min={MIN_GUESTS}
-                max={MAX_GUESTS}
-                value={formValues.guests}
-                onChange={handleInputChange}
-              />
-              {/* Ocassion */}
-              <label aria-label="Ocassion" htmlFor="occasion">
-                Occasion
-              </label>
-              <select
-                id="occasion"
-                name="occasion"
-                required
-                value={formValues.occasion}
-                onChange={handleInputChange}
-              >
-                <option value="birthday">Birthday</option>
-                <option value="anniversary">Anniversary</option>
-                <option value="date">Date</option>
-                <option value="other">Other</option>
-              </select>
+              {errors.date && (
+                <span className="error">Please select a date</span>
+              )}
+              <div className="form-time">
+                <label aria-label="Time" htmlFor="res-time">
+                  Time
+                </label>
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
+                    width: "100%",
+                  }}
+                >
+                  {[...new Set(availableTimes)].map((availableTime, i) => (
+                    <div
+                      aria-label={`${i}--${availableTime}`}
+                      key={`${i}--${availableTime}`}
+                    >
+                      <input
+                        type="radio"
+                        id={`${i}-${availableTime}`}
+                        name="time"
+                        value={availableTime}
+                        checked={formValues.time === availableTime}
+                        onChange={handleInputChange}
+                      />
+                      <label htmlFor={availableTime}>{availableTime}</label>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {errors.time && (
+                <span className="error">Please select a time</span>
+              )}
+              <div className="form-guests">
+                <label htmlFor="guests">Number of Guests</label>
+                <input
+                  type="number"
+                  id="guests"
+                  name="guests"
+                  required
+                  placeholder="1"
+                  min={MIN_GUESTS}
+                  max={MAX_GUESTS}
+                  value={formValues.guests}
+                  onChange={handleInputChange}
+                />
+              </div>
+              {errors.guests && (
+                <span className="error">Please enter the number of guests</span>
+              )}
+              <div className="form-occasion">
+                <label aria-label="Ocassion" htmlFor="occasion">
+                  Occasion
+                </label>
+                <select
+                  id="occasion"
+                  name="occasion"
+                  required
+                  value={formValues.occasion}
+                  onChange={handleInputChange}
+                >
+                  <option value="birthday">Birthday</option>
+                  <option value="anniversary">Anniversary</option>
+                  <option value="date">Date</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              {errors.occasion && (
+                <span className="error">Please select an occasion</span>
+              )}
+
               {/* submit */}
               <button
                 type="submit"

@@ -2,10 +2,10 @@ import { useNavigate } from "react-router-dom";
 import { useReducer, useState } from "react";
 import { fetchAPI } from "../../utils/Api";
 import { BookingForm } from "../../components";
+import "./Reservations.css";
+import { Popup } from "../../components";
 
 const Reservations = () => {
-  const TIMES = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-
   const reducer = (state, action) => {
     switch (action.type) {
       case "book":
@@ -62,14 +62,28 @@ const Reservations = () => {
         aria-label="Reservations Container"
       >
         <h1 aria-label="Reservations Title">Reservations</h1>
-        {selectedDate}
         <BookingForm
           selectedDate={selectedDate}
           onSelectedDateChange={updateTimes}
           availableTimes={availableTimes}
-          onFormSubmit={handleFormSubmit}
+          onFormSubmit={(e, formValues) => {
+            handleFormSubmit(e, formValues);
+            if (Object.values(formValues).every((value) => value)) {
+              setIsPopupVisible(true);
+            }
+          }}
           isFormSubmitted={isFormSubmitted}
         />
+        {isPopupVisible && (
+          <Popup
+            title="Reservation Confirmed"
+            description="Your reservation has been confirmed. We look forward to seeing you soon!"
+            onClose={() => {
+              setIsPopupVisible(false);
+              navigate("/");
+            }}
+          />
+        )}
       </div>
     </section>
   );

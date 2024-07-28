@@ -11,7 +11,7 @@ const Hero = () => (
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br />
           Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
-        <Link to="/booking" aria-label="Reserve a table">
+        <Link to="/reservations" aria-label="Reservations">
           <button type="button" aria-label="Reserve a table button">
             Reserve a table
           </button>
