@@ -39,4 +39,5 @@
 }
 .hero--img img {
     border-radius: 20px;
+    max-width: 400px;
 }

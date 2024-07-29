@@ -18,11 +18,7 @@ const Hero = () => (
         </Link>
       </div>
       <div className="hero--img">
-        <img
-          src="https://via.placeholder.com/400x400"
-          alt="Hero"
-          aria-label="Hero image"
-        />
+        <img src="/hero.jpg" alt="Hero" aria-label="Hero image" />
       </div>
     </div>
   </section>
