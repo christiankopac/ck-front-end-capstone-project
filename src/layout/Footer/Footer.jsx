@@ -3,6 +3,7 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import EmailIcon from "@mui/icons-material/Email";
 import LocalPhoneIcon from "@mui/icons-material/LocalPhone";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
