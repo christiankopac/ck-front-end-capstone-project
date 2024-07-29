@@ -56,12 +56,6 @@ const BookingForm = ({
     setFormValues((prev) => ({ ...prev, [name]: value }));
   };
 
-  const isFormValid =
-    formValues.date &&
-    formValues.time &&
-    formValues.guests &&
-    formValues.occasion;
-
   return (
     <>
       <section className="booking">

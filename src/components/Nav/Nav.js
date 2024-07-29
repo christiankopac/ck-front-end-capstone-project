@@ -15,19 +15,15 @@ const Nav = () => {
         <img src={logo} alt="Little Lemon Logo" />
       </a>
 
-      <a
+      <button
         className="header--hamburger"
         onClick={toggleMenu}
-        role="button"
         aria-label="menu"
       >
         <MenuIcon />
-      </a>
+      </button>
 
-      <ul
-        role="ul-navigation"
-        className={`header--nav ${menuOpen ? "visible" : ""}`}
-      >
+      <ul className={`header--nav ${menuOpen ? "visible" : ""}`}>
         <li>
           <Link to="/" aria-label="Home">
             Home
