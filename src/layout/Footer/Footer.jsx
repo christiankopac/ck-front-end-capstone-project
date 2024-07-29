@@ -17,29 +17,34 @@ const Footer = () => {
           <nav>
             <ul>
               <li>
-                <a href="/" aria-label="Home">
+                <Link to="/" aria-label="Home">
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/" aria-label="About">
+                <Link to="/about" aria-label="About">
                   About
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/" aria-label="Services">
-                  Services
-                </a>
+                <Link to="/menu" aria-label="Menu">
+                  Menu
+                </Link>
               </li>
               <li>
-                <a href="/" aria-label="Reservations">
+                <Link to="/reservations" aria-label="Reservations">
                   Reservations
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/" aria-label="Order Online">
+                <Link to="/orders" aria-label="Order Online">
                   Order Online
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link to="/login" aria-label="Login">
+                  Login
+                </Link>
               </li>
             </ul>
           </nav>
